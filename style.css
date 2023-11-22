@@ -1,0 +1,63 @@
+.container {
+  display: flex;
+  margin: 100px 50px 50px 50px;
+}
+
+.content {
+  width: 456px;
+  margin: 0 auto;
+}
+
+.item {
+  width: 150px;
+  height: 150px;
+  line-height: 50px;
+  text-align: center;
+  display: inline-block;
+  font-size: 25px;
+  border: 1px solid black;
+  cursor: pointer;
+  vertical-align: middle;
+  transition: background 0.1s;
+  user-select: none;
+}
+
+.item:hover {
+  background-color: #f1f1f10c;
+}
+
+[data-id="1"] {
+  border-top: transparent;
+  border-left: transparent;
+}
+
+[data-id="2"] {
+  border-top: transparent;
+}
+
+[data-id="3"] {
+  border-top: transparent;
+  border-right: transparent;
+}
+
+[data-id="4"] {
+  border-left: transparent;
+}
+
+[data-id="6"] {
+  border-right: transparent;
+}
+
+[data-id="7"] {
+  border-left: transparent;
+  border-bottom: transparent;
+}
+
+[data-id="8"] {
+  border-bottom: transparent;
+}
+
+[data-id="9"] {
+  border-bottom: transparent;
+  border-right: transparent;
+}
