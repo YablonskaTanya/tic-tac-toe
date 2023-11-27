@@ -1,9 +1,21 @@
 const container = document.querySelector(".js-content");
 container.addEventListener("click", onClick);
+const button = document.querySelector(".js-button");
+button.addEventListener("click", btnClick);
+const title = document.querySelector(".title");
+const counterX = document.querySelector(".countX");
+const counterO = document.querySelector(".countO");
+
+title.textContent = "🍿 🍿 🍿";
 
 let player = "❌";
 let playerX = [];
 let playerO = [];
+let countX = 0;
+let countO = 0;
+
+counterX.textContent = countX;
+counterO.textContent = countO;
 
 const wins = [
   [1, 2, 3],
@@ -44,11 +56,18 @@ function onClick(e) {
   }
 
   if (result) {
-    console.log(`Winner is ${player} 🎉🎉🎉`);
+    title.textContent = `🏅 Winner is ${player}  🎉🎉🎉`;
+    if (player === "❌") {
+      counterX.textContent = countX += 1;
+    } else {
+      counterO.textContent = countO += 1;
+    }
+
     resetGame();
     return;
   } else if (isEndGame) {
-    console.log(`Try again 🫠`);
+    title.textContent = `Try again 🫠`;
+
     resetGame();
     return;
   }
@@ -60,6 +79,13 @@ function isWinner(arr) {
 }
 
 function resetGame() {
+  createMarkup();
+  playerX = [];
+  playerO = [];
+  player = "❌";
+}
+
+function btnClick() {
   createMarkup();
   playerX = [];
   playerO = [];
